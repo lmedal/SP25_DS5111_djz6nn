@@ -1,6 +1,11 @@
-import pandas as pd
+"""
+Module for normalizing stock CSV files.
+"""
+
 import argparse
 import os
+
+import pandas as pd
 
 
 def normalize_csv(input_path):

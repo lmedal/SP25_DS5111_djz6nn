@@ -20,12 +20,11 @@ sample_data/wjsgainers.csv:
 	python scripts/test_wsj_selenium.py
 
 lint:
-	flake8 --ignore=E501 bin/normalize_csv.py
-
+	pylint bin/normalize_csv.py
 
 format:
 	black bin/normalize_csv.py
 
 test:
-	python tests/test_normalize_csv.py
-
+	make lint
+	pytest -vv tests
