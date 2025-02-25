@@ -3,3 +3,5 @@ lxml
 pylint
 black
 pytest
+isort
+pytest-cov
