@@ -2,10 +2,10 @@ default:
 	@cat Makefile
 
 env:
-	python3 -m venv env; source env/bin/activate; pip install --upgrade pip
+	python3 -m venv env; . env/bin/activate; pip install --upgrade pip
 
 update: env
-	source env/bin/activate; pip install -r requirements.txt
+	. env/bin/activate && pip install -r requirements.txt
 
 sample_data/ygainers.html:
 	sudo google-chrome-stable --headless --disable-gpu --dump-dom --no-sandbox --timeout=5000 'https://finance.yahoo.com/markets/stocks/gainers/?start=0&count=200' > sample_data/ygainers.html
@@ -20,10 +20,11 @@ sample_data/wjsgainers.csv:
 	python scripts/test_wsj_selenium.py
 
 lint:
-	source env/bin/activate && pylint bin/normalize_csv.py
+	. env/bin/activate && pylint bin/normalize_csv.py
 
 format:
-	source env/bin/activate && black bin/normalize_csv.py
+	. env/bin/activate && black bin/normalize_csv.py
 
 test:
-	source env/bin/activate && make lint && pytest -vv tests
+	. env/bin/activate && make lint
+	. env/bin/activate && pytest -vv tests
