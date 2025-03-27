@@ -1,2 +1,12 @@
 pandas
 lxml
+pylint
+black
+flake8
+isort
+pytest
+pytest-cov
+python-dotenv
+requests
+selenium
+webdriver-manager

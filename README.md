@@ -1,5 +1,7 @@
 # SP25_DS5111_djz6nn
 
+![Feature Validation](https://github.com/lmedal/SP25_DS5111_djz6nn/actions/workflows/validations.yml/badge.svg)
+
 ## VM Bootstrap & Project Setup Guide
 
 ### Overview
