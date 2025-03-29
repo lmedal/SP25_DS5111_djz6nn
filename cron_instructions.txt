@@ -1,0 +1,9 @@
+# Yahoo Gainers - 3x/day from March 31 to April 4, 2025 (UTC)
+31 13 31,1-4 3,4 * /home/ubuntu/SP25_DS5111_djz6nn/env/bin/python /home/ubuntu/SP25_DS5111_djz6nn/get_gainer.py --src=yahoo
+30 16 31,1-4 3,4 * /home/ubuntu/SP25_DS5111_djz6nn/env/bin/python /home/ubuntu/SP25_DS5111_djz6nn/get_gainer.py --src=yahoo
+1 21 31,1-4 3,4 *  /home/ubuntu/SP25_DS5111_djz6nn/env/bin/python /home/ubuntu/SP25_DS5111_djz6nn/get_gainer.py --src=yahoo
+
+# WSJ Gainers - 3x/day from March 31 to April 4, 2025 (UTC)
+31 13 31,1-4 3,4 * /home/ubuntu/SP25_DS5111_djz6nn/env/bin/python /home/ubuntu/SP25_DS5111_djz6nn/get_gainer.py --src=wsj
+30 16 31,1-4 3,4 * /home/ubuntu/SP25_DS5111_djz6nn/env/bin/python /home/ubuntu/SP25_DS5111_djz6nn/get_gainer.py --src=wsj
+1 21 31,1-4 3,4 *  /home/ubuntu/SP25_DS5111_djz6nn/env/bin/python /home/ubuntu/SP25_DS5111_djz6nn/get_gainer.py --src=wsj
