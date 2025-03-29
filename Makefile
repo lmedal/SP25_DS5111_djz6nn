@@ -27,4 +27,6 @@ format:
 
 test:
 	. env/bin/activate && make lint
-	. env/bin/activate && pytest -vv tests
+	PYTHONPATH=. env/bin/python -m pytest -vv tests
+gainers:
+	env/bin/python get_gainer.py --src=$(SRC)
