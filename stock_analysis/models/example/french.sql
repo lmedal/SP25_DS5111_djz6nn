@@ -1,0 +1,2 @@
+SELECT FR 
+FROM DATA_SCIENCE.djz6nn_RAW.numbers
