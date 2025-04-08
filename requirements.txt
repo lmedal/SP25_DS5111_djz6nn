@@ -10,3 +10,5 @@ python-dotenv
 requests
 selenium
 webdriver-manager
+dbt-core
+dbt-snowflake

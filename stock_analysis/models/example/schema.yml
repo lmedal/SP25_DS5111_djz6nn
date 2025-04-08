@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: my_first_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: my_second_dbt_model
+    description: "A starter dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+
+  - name: french
+    description: "Test french table"
+    columns:
+      - name: FR
+        description: "The French word column"
+        tests:
+          - unique
+          - not_null
+          - accepted_values:
+              values: ['un', 'deux', 'trois']
+
+  - name: enfr
+    description: "English to French translations"
+    columns:
+      - name: EN
+        description: "English words"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('ende')
+              field: EN
+      - name: FR
+        description: "French words"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['un', 'deux', 'trois']
+
+  - name: ende
+    description: "English to German translations"
+    columns:
+      - name: EN
+        description: "English words"
+        tests:
+          - not_null
+      - name: DE
+        description: "German words"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['einz', 'zwei', 'drei']
