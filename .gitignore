@@ -1,12 +1,30 @@
-# Ignore virtual environment directory
+# Virtual environments
 env/
+venv/
 
-# Ignore Python cache files
+# Python bytecode and cache
 __pycache__/
+**/__pycache__/
 *.pyc
+**/*.pyc
 *.pyo
+**/*.pyo
 *.pyd
+**/*.pyd
 
-# Ignore logs and temporary files
+# Logs and temporary files
 *.log
 *.tmp
+logs/
+stock_analysis/logs/
+
+# DBT artifacts
+target/
+stock_analysis/target/
+dbt_packages/
+
+# Raw data (optional if you're regenerating from source)
+data/raw/
+
+# Browser install artifacts
+google-chrome-stable_current_amd64.deb
