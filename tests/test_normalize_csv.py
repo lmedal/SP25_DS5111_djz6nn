@@ -7,12 +7,14 @@ from bin.normalize_csv import normalize_csv
 
 def test_normalizer():
     """
-    Test the normalize_csv function.
+    GIVEN a sample CSV file with non-normalized column names
+    WHEN the normalize_csv function is applied
+    THEN the resulting file should exist and have expected normalized column names
     """
     test_file = "sample_data/test_gainers.csv"
     test_output = "sample_data/test_gainers_norm.csv"
 
-    # Create a sample CSV file
+    # GIVEN: Create a sample input CSV
     df = pd.DataFrame({
         "Symbol": ["AAPL", "GOOGL"],
         "Price": [150, 2800],
@@ -21,18 +23,17 @@ def test_normalizer():
     })
     df.to_csv(test_file, index=False)
 
-    # Run normalization
+    # WHEN: Normalize the file
     normalize_csv(test_file)
 
-    # Check if output file is created
-    assert os.path.exists(test_output), "Normalized file not created"
+    # THEN: Check if normalized file is created
+    assert os.path.exists(test_output), "❌ Normalized file was not created."
 
     df_norm = pd.read_csv(test_output)
-    assert "symbol" in df_norm.columns
-    assert "price" in df_norm.columns
-    assert "price_change" in df_norm.columns
-    assert "price_percent_change" in df_norm.columns
 
-    print("✅ Test Passed: CSV Normalization Works!")
+    # THEN: Check for expected column names
+    expected_cols = ["symbol", "price", "price_change", "price_percent_change"]
+    for col in expected_cols:
+        assert col in df_norm.columns, f"❌ Expected column '{col}' not found."
 
-
+    print("✅ Test Passed: CSV normalization works as expected.")
